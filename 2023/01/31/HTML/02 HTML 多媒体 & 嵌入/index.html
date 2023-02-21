@@ -1,0 +1,982 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/008-typing.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="wwww-oooo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="用 HTML 来让你的网页包含多媒体  包含图像的不同方式 以及怎样嵌入视频 嵌入整个其他的网页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02 HTML 多媒体 &amp; 嵌入">
+<meta property="og:url" content="http://example.com/2023/01/31/HTML/02%20HTML%20%E5%A4%9A%E5%AA%92%E4%BD%93%20&%20%E5%B5%8C%E5%85%A5/index.html">
+<meta property="og:site_name" content="WWWW-OOOO">
+<meta property="og:description" content="用 HTML 来让你的网页包含多媒体  包含图像的不同方式 以及怎样嵌入视频 嵌入整个其他的网页">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/01/31/HTML/02%20HTML%20%E5%A4%9A%E5%AA%92%E4%BD%93%20&%20%E5%B5%8C%E5%85%A5/Pasted%20image%2020230202155809.png">
+<meta property="og:image" content="http://example.com/2023/01/31/HTML/02%20HTML%20%E5%A4%9A%E5%AA%92%E4%BD%93%20&%20%E5%B5%8C%E5%85%A5/Pasted%20image%2020230202164931.png">
+<meta property="article:published_time" content="2023-01-31T09:42:04.024Z">
+<meta property="article:modified_time" content="2023-02-02T08:49:32.158Z">
+<meta property="article:author" content="wwww-oooo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2023/01/31/HTML/02%20HTML%20%E5%A4%9A%E5%AA%92%E4%BD%93%20&%20%E5%B5%8C%E5%85%A5/Pasted%20image%2020230202155809.png">
+  
+  
+  
+  <title>02 HTML 多媒体 &amp; 嵌入 - WWWW-OOOO</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>WWWW-OOOO</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="02 HTML 多媒体 &amp; 嵌入"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-31 17:42" pubdate>
+          2023年1月31日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          51 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">02 HTML 多媒体 &amp; 嵌入</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li>用 HTML 来让你的网页包含多媒体
+<ul>
+<li>包含图像的不同方式</li>
+<li>以及怎样嵌入视频</li>
+<li>嵌入整个其他的网页</li>
+</ul></li>
+</ul>
+<span id="more"></span>
+<blockquote>
+<p><a
+target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding">多媒体与嵌入
+- 学习 Web 开发 | MDN (mozilla.org)</a> 学习笔记</p>
+</blockquote>
+<h1 id="html-嵌入图片">1 HTML 嵌入图片</h1>
+<h2 id="将图片放到网页中-img">1.1 将图片放到网页中
+<code>&lt;img&gt;</code></h2>
+<ul>
+<li><code>&lt;img&gt;</code> 是一个
+<strong>空元素</strong>（不需要包含文本内容或闭合标签）</li>
+<li><code>src</code> 属性指向要引入的图片的路径
+<ul>
+<li>搜索引擎也读取图像的文件名并把它们计入 SEO。因此应该给图片取一个
+<u>描述性</u> 的文件名</li>
+</ul></li>
+<li>替换元素
+<ul>
+<li>像<code>&lt;img&gt;</code>和 <code>&lt;video&gt;</code>
+这样的元素有时被称之为替换元素，因为这样的元素的内容和尺寸由外部资源（像是一个图片或视频文件）所定义，而不是元素自身</li>
+</ul></li>
+<li><code>alt</code>
+属性：对图片的文字描述，在图片无法显示时作为替代显示</li>
+<li><code>width</code> 和 <code>height</code></li>
+<li><code>title</code> 图片标题，鼠标悬停时显示</li>
+</ul>
+<h2 id="为图片搭配说明文字-figure">1.2 为图片搭配说明文字
+<code>&lt;figure&gt;</code></h2>
+<ul>
+<li><code>&lt;figure&gt;</code> 和 <code>&lt;figcaption&gt;</code></li>
+<li>使用方法 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;small.jpg&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;一只恐龙头部和躯干的骨架 &quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;400&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;341&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>曼彻斯特大学博物馆展出的一只霸王龙的化石<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span> <br></code></pre></td></tr></table></figure></li>
+<li>⚠ 注意：<code>&lt;figure&gt;</code>
+里不一定要是一张图片，可以放代码、音频等</li>
+</ul>
+<h2 id="利用-css-插入背景图片">1.3 利用 CSS 插入背景图片</h2>
+<ul>
+<li>如果图像对内容里有意义，则应使用 HTML 图像</li>
+<li>如果图像纯粹是装饰，则应使用 CSS 背景图片</li>
+</ul>
+<h1 id="为-html-插入音频和视频">2 为 HTML 插入音频和视频</h1>
+<h2 id="video-元素">2.1 <code>&lt;video&gt;</code> 元素</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.webm&quot;</span> <span class="hljs-attr">controls</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频。可点击<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span>&gt;</span>此链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>观看<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>src</code> 属性：指向你想要嵌入网页当中的视频资源</li>
+<li><code>controls</code>
+属性：使用 <code>controls</code> 来包含浏览器提供的控件界面
+<ul>
+<li>也可以使用 JavaScript API 创建自己的界面</li>
+</ul></li>
+<li><code>&lt;video&gt;</code> 标签内的内容：<strong>后备内容</strong>
+<ul>
+<li>当浏览器不支持 <code>&lt;video&gt;</code> 标签的时候，就会显示这段内容，这使得我们能够对旧的浏览器提供回退内容</li>
+</ul></li>
+<li><code>&lt;width&gt;</code> 和 <code>&lt;height&gt;</code>
+<ul>
+<li>视频会保持原有的纵横比，多出来的部分被背景颜色填充</li>
+</ul></li>
+<li><code>&lt;autoplay&gt;</code>：使音频和视频内容立即播放，即使页面的其他部分还没有加载完全【不建议使用】</li>
+<li><code>&lt;loop&gt;</code>：循环播放【不建议使用】</li>
+<li><code>&lt;muted&gt;</code>：默认静音播放</li>
+<li><code>&lt;poster&gt;</code>：预览/广告，在视频播放前显示</li>
+<li><code>&lt;preload&gt;</code>：被用来缓冲较大的文件
+<ul>
+<li><code>"none"</code> ：不缓冲</li>
+<li><code>"auto"</code> ：页面加载后缓存媒体文件</li>
+<li><code>"metadata"</code> ：仅缓冲文件的元数据</li>
+</ul></li>
+</ul>
+<h2 id="使用多个播放源以提高兼容性">2.2 使用多个播放源以提高兼容性</h2>
+<h3 id="媒体文件的内容">媒体文件的内容</h3>
+<ul>
+<li>容器格式：MP3、MP4、WebM...
+<ul>
+<li>定义了构成媒体文件的音频轨道和视频轨道的储存结构，其中还包含描述这个媒体文件的元数据，以及用于编码的编码译码器</li>
+</ul></li>
+</ul>
+<h3 id="如何在-html-中使用多个播放源">如何在 HTML 中使用多个播放源</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/mp4&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.webm&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/webm&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频。可点击<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span>&gt;</span>此链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>观看<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>将 <code>src</code> 属性从 <code>&lt;video&gt;</code> 标签中移除，放在单独的标签
+<code>&lt;source&gt;</code> 中
+<ul>
+<li>浏览器将会检查 <code>&lt;source&gt;</code> 标签，并且播放第一个与其自身
+codec 相匹配的媒体</li>
+<li>每个 <code>&lt;source&gt;</code> 标签页含有一个 <code>type</code> 属性，这个属性是可选的，但是建议你添加上这个属性
+— 它包含了视频文件的 MIME
+types ，同时==浏览器也会通过检查这个属性来迅速的跳过那些不支持的格式==</li>
+</ul></li>
+</ul>
+<h2 id="audio-标签">2.3 <code>&lt;audio&gt;</code> 标签</h2>
+<ul>
+<li><code>&lt;audio&gt;</code> 标签与 <code>&lt;video&gt;</code>
+标签的使用方式几乎完全相同</li>
+<li>与 HTML5 <code>&lt;video&gt;</code> 的差异：
+<ul>
+<li><code>&lt;audio&gt;</code> 标签不支持 <code>width/height</code> 属性
+— 由于其并没有视觉部件，也就没有可以设置 <code>width/height</code>
+的内容。</li>
+<li>同时也不支持 <code>poster</code> 属性（没有视觉部件）</li>
+</ul></li>
+</ul>
+<h3 id="重新播放">重新播放</h3>
+<p>在 Javascript 中调用 <code>load()</code>
+方法来重置媒体。如果有多个由 <code>&lt;source&gt;</code> 标签指定的媒体来源，浏览器会从选择媒体来源开始重新加载媒体</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">const</span> mediaElem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;my-media-element&quot;</span>);<br>mediaElem.<span class="hljs-title function_">load</span>();<br></code></pre></td></tr></table></figure>
+<h3 id="音轨增删事件">音轨增删事件</h3>
+<p>监控媒体元素中的音频轨道，当音轨被添加或删除时，你可以通过监听相关事件来侦测到</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> mediaElem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;video&quot;</span>);<br>mediaElem.<span class="hljs-property">audioTracks</span>.<span class="hljs-property">onaddtrack</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) &#123;<br>  <span class="hljs-title function_">audioTrackAdded</span>(event.<span class="hljs-property">track</span>);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h2 id="显示音轨文本">2.4 显示音轨文本</h2>
+<h3 id="用-webvtt-格式编写文本文件">用 WebVTT 格式编写文本文件</h3>
+<ul>
+<li>这个文本文件包含了众多的==字符串==，这些字符串会带有一些元数据，它们可以用来描述这个字符串将会在视频中显示的时间，甚至可以用来描述这些字符串的样式以及定位信息
+<ul>
+<li>这些字符串叫做 <strong>cues</strong>，可以根据不同的需求来显示不同的样式</li>
+</ul></li>
+<li>常见 cues
+<ul>
+<li>subtitles：通过添加
+<strong>翻译字幕</strong>，来帮助那些听不懂外国语言的人们理解音频当中的内容。</li>
+<li>captions：同步翻译对白，或是描述一些有重要信息的声音，来
+<strong>帮助那些不能听音频的人们</strong> 理解音频中的内容。</li>
+<li>timed
+descriptions：<strong>将文字转换为音频</strong>，用于服务那些有视觉障碍的人。</li>
+</ul></li>
+</ul>
+<h3 id="让-webvtt-文件和-html-媒体一起显示">让 WebVTT 文件和 HTML
+媒体一起显示</h3>
+<ol type="1">
+<li>以 .vtt 后缀名保存文件</li>
+<li>用 <code>&lt;track&gt;</code> 标签链接 .vtt 文件
+<ol type="1">
+<li><code>&lt;track&gt;</code> 标签需放在 <code>&lt;audio&gt;</code> 或 <code>&lt;video&gt;</code> 标签当中</li>
+<li>需要放在所有 <code>&lt;source&gt;</code> 标签之后</li>
+<li>使用 <code>kind</code> 属性来指明是哪一种类型，如
+subtitles、captions、descriptions</li>
+<li>使用 <code>srclang</code> 来告诉浏览器你是用什么语言来编写的
+subtitles</li>
+</ol></li>
+</ol>
+<h1 id="其他嵌入技术">3 其他嵌入技术</h1>
+<h2 id="将其他-web-文档嵌入到当前文档iframe">3.1 将其他 Web
+文档嵌入到当前文档<code>&lt;iframe&gt;</code></h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://developer.mozilla.org/zh-CN/docs/Glossary&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">allowfullscreen</span> <span class="hljs-attr">sandbox</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://developer.mozilla.org/zh-CN/docs/Glossary&quot;</span>&gt;</span><br>    Fallback link for browsers that don&#x27;t support iframes<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>allowfullscreen</code>
+属性：如果设置，<code>&lt;iframe&gt;</code> 则可以通过全屏 API
+设置为全屏模式</li>
+<li><code>frameborder</code> 属性：
+<ul>
+<li>1：在此框架和其他框架之间绘制边框（默认）</li>
+<li>0：删除边框（不推荐）</li>
+</ul></li>
+<li><code>src</code> 属性</li>
+<li><code>width</code> 和 <code>height</code></li>
+<li>备选内容</li>
+<li><code>sandbox</code> 属性：可以提高安全性设置</li>
+</ul>
+<h3 id="iframe-的安全问题"><code>&lt;iframe&gt;</code> 的安全问题</h3>
+<ul>
+<li>只在有必要时嵌入</li>
+<li>使用 HTTPS</li>
+<li>始终使用 <code>sandbox</code> 属性</li>
+<li>配置 CSP 指令</li>
+</ul>
+<h2 id="embed-和-object-元素">3.2 <code>&lt;embed&gt;</code> 和
+<code>&lt;object&gt;</code> 元素</h2>
+<ul>
+<li>嵌入多种类型的外部内容的通用嵌入工具</li>
+</ul>
+<p><img src="Pasted%20image%2020230202155809.png" srcset="/img/loading.gif" lazyload /></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;mypdf.pdf&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;application/pdf&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;800&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1200&quot;</span> <span class="hljs-attr">typemustmatch</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You don&#x27;t have a PDF plugin, but you can <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;myfile.pdf&quot;</span>&gt;</span>download the PDF file.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="嵌入矢量图-svg">4 嵌入矢量图 <code>&lt;svg&gt;</code></h1>
+<h3 id="svg-介绍">4.1 SVG 介绍</h3>
+<ul>
+<li>SVG 是用于描述矢量图像的XML语言。它基本上是像 HTML
+一样的标记，只是你有许多不同的元素来定义要显示在图像中的形状，以及要应用于这些形状的效果</li>
+<li>你有一些元素来创建简单图形，如 <code>&lt;circle&gt;</code> 和
+<code>&lt;rect&gt;</code></li>
+<li>更高级的 SVG 功能包括
+<code>&lt;feColorMatrix&gt;</code>（使用变换矩阵转换颜色）<code>&lt;animate&gt;</code>
+（矢量图形的动画部分）和
+<code>&lt;mask&gt;</code>（在图像顶部应用模板）</li>
+</ul>
+<h2 id="将-svg-添加到页面">4.2 将 SVG 添加到页面</h2>
+<h3 id="快捷方法使用-img">快捷方法：使用 <code>&lt;img&gt;</code></h3>
+<ul>
+<li>优点
+<ul>
+<li>快速，熟悉的图像语法与alt属性中提供的内置文本等效</li>
+<li>可以通过在<code>&lt;a&gt;</code>元素嵌套
+<code>&lt;img&gt;</code>，使图像轻松地成为超链接</li>
+</ul></li>
+<li>缺点
+<ul>
+<li>无法使用 JavaScript 操作图像。</li>
+<li>如果要使用 CSS 控制 SVG 内容，则必须在 SVG 代码中包含内联 CSS 样式。
+（从 SVG 文件调用的外部样式表不起作用）</li>
+<li>不能用 CSS 伪类来重设图像样式（如<code>:focus</code>）</li>
+</ul></li>
+</ul>
+<h3 id="内联-svg">内联 SVG</h3>
+<ul>
+<li>打开 SVG 文件，复制 SVG 代码，并将其粘贴到 HTML
+文档<code>&lt;svg&gt;&lt;/svg&gt;</code> 中</li>
+<li>优点
+<ul>
+<li>将 SVG 内联减少 HTTP 请求，可以减少加载时间。</li>
+<li>您可以为 SVG 元素分配<code>class</code>和<code>id</code>，并使用 CSS
+修改样式，无论是在 SVG 中，还是 HTML 文档中的 CSS
+样式规则。实际上，您可以使用任何 SVG 外观属性 作为 CSS 属性。</li>
+<li>内联 SVG 是唯一可以让您在 SVG 图像上使用 CSS
+交互（如<code>:focus</code>）和 CSS
+动画的方法（即使在常规样式表中）</li>
+<li>您可以通过将 SVG 标记包在<a
+target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a>元素中，使其成为超链接。</li>
+</ul></li>
+<li>缺点
+<ul>
+<li>这种方法 <strong>只适用于在一个地方使用的
+SVG</strong>。多次使用会导致资源密集型维护（resource-intensive
+maintenance）。</li>
+<li>额外的 SVG 代码会增加 HTML 文件的大小。</li>
+<li>浏览器不能像缓存普通图片一样缓存内联 SVG。</li>
+<li>您可能会在 <code>&lt;foreignObject&gt;</code> 元素中包含回退，但支持
+SVG
+的浏览器仍然会下载任何后备图像。你需要考虑仅仅为支持过时的浏览器，而增加额外开销是否真的值得。</li>
+</ul></li>
+</ul>
+<h3 id="使用-iframe-嵌入-svg">使用 <code>&lt;iframe&gt;</code> 嵌入
+SVG</h3>
+<ul>
+<li>缺点：
+<ul>
+<li>如果浏览器不支持<code>iframe</code>，则只会显示回退。</li>
+<li>此外，除非 SVG
+和您当前的网页具有相同的 origin，否则你不能在主页面上使用 JavaScript
+来操纵 SVG</li>
+</ul></li>
+</ul>
+<h1 id="响应式图片">5 响应式图片</h1>
+<ul>
+<li>响应式图片：在不同的屏幕尺寸、分辨率或具有其他类似特性的设备上都呈现良好的图片</li>
+</ul>
+<h2 id="图片的不同尺寸切换">5.1 图片的不同尺寸切换</h2>
+<ul>
+<li>利用 <code>&lt;img&gt;</code> 的 <code>srcset</code> 和
+<code>sizes</code> 两个属性 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span></span><br><span class="hljs-tag">  <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;(max-width: 600px) 480px,</span></span><br><span class="hljs-string"><span class="hljs-tag">         800px&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-fairy-800w.jpg&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Elva dressed as a fairy&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><strong><code>srcset</code></strong> 定义了浏览器可选择的图片设置以及每个图片的大小，每张图片信息的设置和前一个用逗号隔开，每个设置要写：
+<ol type="1">
+<li>一个<strong>文件名</strong>（<code>elva-fairy-480w.jpg</code>）</li>
+<li>一个空格</li>
+<li><strong>图片的固有宽度</strong>（以像素为单位）（480w）。注意，这里使用宽度描述符 <code>w</code></li>
+</ol></li>
+<li><strong><code>sizes</code></strong> 定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择——这就是我们之前提到的提示
+<ol type="1">
+<li>一个<strong>媒体条件</strong>（<code>(max-width:600px)</code>）描述了一种屏幕可能处于的状态。上面示例中，我们说“当视口的宽度小于等于
+600px 时”。</li>
+<li>一个空格</li>
+<li>当媒体条件为真时，图像将填充的
+<strong>槽的宽度</strong>（<code>480px</code>）</li>
+</ol></li>
+<li>运行逻辑
+<ol type="1">
+<li>检查设备宽度</li>
+<li>检查 <code>sizes</code> 列表中哪个媒体条件是第一个为真</li>
+<li>查看给予该媒体查询的槽大小</li>
+<li>加载 <code>srcset</code> 列表中引用的最接近所选的槽大小的图像</li>
+</ol></li>
+</ul>
+<h2 id="相同尺寸的不同分辨率切换">5.2 相同尺寸的不同分辨率切换</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-fairy-320w.jpg, elva-fairy-480w.jpg 1.5x, elva-fairy-640w.jpg 2x&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-fairy-640w.jpg&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Elva dressed as a fairy&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">img</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">320px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>不需要 <code>sizes</code> 属性，浏览器计算分辨率后从
+<code>srcset</code> 加载最合适的图片</li>
+</ul>
+<h2 id="更改显示的图像以适应不同的显示尺寸-picture">5.3
+更改显示的图像以适应不同的显示尺寸 <code>&lt;picture&gt;</code></h2>
+<ul>
+<li>在不同显示尺寸时，直接更改显示图像（如去掉图像多余的背景部分）
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(max-width: 799px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-480w-close-portrait.jpg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(min-width: 800px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Chris standing up holding his daughter Elva&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="Pasted%20image%2020230202164931.png" srcset="/img/loading.gif" lazyload /></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/HTML/" class="category-chain-item">HTML</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>02 HTML 多媒体 &amp; 嵌入</div>
+      <div>http://example.com/2023/01/31/HTML/02 HTML 多媒体 &amp; 嵌入/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>wwww-oooo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月31日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/04/HTML/03%20HTML%20%E8%A1%A8%E6%A0%BC/" title="03 HTML 表格">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">03 HTML 表格</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/30/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

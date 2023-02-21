@@ -1,0 +1,1125 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/008-typing.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="wwww-oooo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2 CSS 构建基础 2.1 CSS 选择器  选择器列表 选择器种类  类型、类和 ID 选择器 标签属性选择器 伪类与伪元素 运算符   2.1.1 类型、类和 ID 选择器 类型选择器  类型选择器有时也叫做 “标签名选择器*” 或者是 ”元素选择器“ 文档中选择了一个 HTML 标签&#x2F;元素  全局选择器  全局选择器，是由一个星号（*）代指的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02 CSS 构建基础">
+<meta property="og:url" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="WWWW-OOOO">
+<meta property="og:description" content="2 CSS 构建基础 2.1 CSS 选择器  选择器列表 选择器种类  类型、类和 ID 选择器 标签属性选择器 伪类与伪元素 运算符   2.1.1 类型、类和 ID 选择器 类型选择器  类型选择器有时也叫做 “标签名选择器*” 或者是 ”元素选择器“ 文档中选择了一个 HTML 标签&#x2F;元素  全局选择器  全局选择器，是由一个星号（*）代指的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/%E5%AD%98%E5%90%A6%E5%92%8C%E5%80%BC%E9%80%89%E6%8B%A9%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E9%80%89%E6%8B%A9%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90.png">
+<meta property="og:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/Pasted%20image%2020230221094057.png">
+<meta property="og:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/Pasted%20image%2020230221100612.png">
+<meta property="article:published_time" content="2023-02-20T01:17:35.290Z">
+<meta property="article:modified_time" content="2023-02-21T08:22:14.762Z">
+<meta property="article:author" content="wwww-oooo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2023/02/20/CSS/02%20CSS%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80/%E5%AD%98%E5%90%A6%E5%92%8C%E5%80%BC%E9%80%89%E6%8B%A9%E5%99%A8.png">
+  
+  
+  
+  <title>02 CSS 构建基础 - WWWW-OOOO</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>WWWW-OOOO</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="02 CSS 构建基础"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-20 09:17" pubdate>
+          2023年2月20日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          48 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">02 CSS 构建基础</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <span id="more"></span>
+<h1 id="css-构建基础">2 CSS 构建基础</h1>
+<h2 id="css-选择器">2.1 CSS 选择器</h2>
+<ul>
+<li>选择器列表</li>
+<li>选择器种类
+<ul>
+<li>类型、类和 ID 选择器</li>
+<li>标签属性选择器</li>
+<li>伪类与伪元素</li>
+<li>运算符</li>
+</ul></li>
+</ul>
+<h3 id="类型类和-id-选择器">2.1.1 类型、类和 ID 选择器</h3>
+<h4 id="类型选择器">类型选择器</h4>
+<ul>
+<li><strong>类型选择器</strong>有时也叫做 “标签名选择器*” 或者是
+”元素选择器“</li>
+<li>文档中选择了一个 HTML 标签/元素</li>
+</ul>
+<h4 id="全局选择器">全局选择器</h4>
+<ul>
+<li>全局选择器，是由一个星号（<code>*</code>）代指的</li>
+<li>它选中了文档中的所有内容（或者是父元素中的所有内容，比如，它紧随在其他元素以及邻代运算符之后的时候）</li>
+<li>全局选择器的一种用法是让选择器更易读，更明显地表明它们的作用 <img
+src="全局选择器的一种用法是让选择器更易读.png" srcset="/img/loading.gif" lazyload
+alt="全局选择器的一种用法是让选择器更易读" /></li>
+</ul>
+<h4 id="类选择器">类选择器</h4>
+<ul>
+<li>选择文档中应用了这个类的所有物件</li>
+<li>指向特定元素的类 <code>span.highlight</code></li>
+<li>多个类被应用的时候指向一个元素 <code>.notebox.warning</code></li>
+</ul>
+<h4 id="id-选择器">ID 选择器</h4>
+<ul>
+<li>ID 选择器开头为<code>#</code></li>
+</ul>
+<h3 id="属性选择器">2.1.2 属性选择器</h3>
+<ul>
+<li>选中带有特定属性的元素</li>
+</ul>
+<h4 id="存否和值选择器">存否和值选择器</h4>
+<ul>
+<li>允许基于一个元素自身是否存在（例如<code>href</code>）或者基于各式不同的按属性值的匹配，来选取元素</li>
+<li><figure>
+<img src="存否和值选择器.png" srcset="/img/loading.gif" lazyload alt="存否和值选择器" />
+<figcaption aria-hidden="true">存否和值选择器</figcaption>
+</figure></li>
+<li><strong>【注意】</strong><code>[attribute|=value]</code>
+选择器用于选取属性值以指定值开头的元素。注释：该值必须是<strong>整个单词</strong>，比如
+lang="en"，<strong>或者后面跟着连字符</strong>，比如 lang="en-us"。</li>
+</ul>
+<h4 id="子字符串匹配选择器">子字符串匹配选择器</h4>
+<figure>
+<img src="子字符串匹配选择器.png" srcset="/img/loading.gif" lazyload alt="子字符串匹配选择器" />
+<figcaption aria-hidden="true">子字符串匹配选择器</figcaption>
+</figure>
+<h4 id="大小写敏感">大小写敏感</h4>
+<ul>
+<li>如果你想在大小写 <strong>不敏感</strong>
+的情况下，匹配属性值的话，你可以在闭合括号之前，<strong>使用<code>i</code>值</strong>。这个标记告诉浏览器，要以大小写不敏感的方式匹配
+ASCII 字符</li>
+<li><code>li[class^="a" i]</code></li>
+</ul>
+<h3 id="伪类和伪元素">2.1.3 伪类和伪元素</h3>
+<h4 id="伪类">伪类</h4>
+<ul>
+<li>伪类是选择器的一种，它用于选择 <strong>处于特定状态</strong>
+的元素</li>
+<li>伪类就是开头为冒号的关键字：<code>:pseudo-class-name</code></li>
+</ul>
+<h5 id="简单伪类">简单伪类</h5>
+<ul>
+<li><code>:first-child</code> 选择第一个子元素
+<ul>
+<li><code>article p:first-child</code>，<code>&lt;article&gt;</code>
+第一个 <code>&lt;p&gt;</code></li>
+</ul></li>
+<li><code>:last-child</code></li>
+<li><code>:only-child</code></li>
+<li><code>:invalid</code></li>
+</ul>
+<h5 id="用户行为伪类动态伪类">用户行为伪类（动态伪类）</h5>
+<ul>
+<li>在用户以某种方式和文档交互的时候应用</li>
+<li><code>:hover</code> 指针悬停时激活</li>
+<li><code>:focus</code>
+当用户点击或触摸元素或通过键盘的“tab”键选择它时会被触发</li>
+</ul>
+<h4 id="伪元素">伪元素</h4>
+<ul>
+<li>表现得是像你往标记文本中加入全新的 HTML 元素一样</li>
+<li>伪元素开头为双冒号<code>::</code></li>
+<li><code>::first-line</code>
+即使单词/字符的数目改变，它也只会选中第一行</li>
+</ul>
+<h4 id="结合伪类和伪元素">结合伪类和伪元素</h4>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 选择一个`&lt;article&gt;`元素里面的第一个`&lt;p&gt;`元素的第一行 */</span><br><span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child<span class="hljs-selector-pseudo">::first-line</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">120%</span>;<br>  <span class="hljs-attribute">font-weight</span>: bold;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="before-和-after"><code>::before</code> 和
+<code>::after</code></h4>
+<ul>
+<li>和 content 属性一同使用，使用 CSS 将内容插入到你的文档中中
+<ul>
+<li>插入一个文本字符串</li>
+<li>插入一个图标</li>
+<li>插入空字符串，其后可以像页面上的其他元素被样式化</li>
+</ul></li>
+</ul>
+<h3 id="关系选择器">2.1.4 关系选择器</h3>
+<h4 id="后代选择器">后代选择器 <code></code></h4>
+<ul>
+<li>用单个空格（" "）字符组合两个选择器 <code>body article p</code></li>
+</ul>
+<h4 id="子代关系选择器">子代关系选择器 <code>&gt;</code></h4>
+<ul>
+<li>只会在选择器选中 <strong>直接子元素</strong>
+的时候匹配，继承关系上更远的后代则不会匹配</li>
+</ul>
+<h4 id="邻接兄弟">邻接兄弟 <code>+</code></h4>
+<ul>
+<li>选中恰好处于另一个在继承关系上 <strong>同级</strong> 的元素
+<strong>旁边</strong> 的物件</li>
+</ul>
+<h4 id="通用兄弟">通用兄弟 <code>~</code></h4>
+<ul>
+<li>选中一个元素的兄弟元素，<strong>即使它们不直接相邻</strong></li>
+</ul>
+<h2 id="层叠优先级和继承">2.2 层叠、优先级和继承</h2>
+<h3 id="冲突规则">2.2.1 冲突规则</h3>
+<ul>
+<li>样式表<strong>层叠</strong>：当应用两条同级别的规则到一个元素的时候，写在
+<strong>后面</strong> 的就是实际使用的规则</li>
+<li><strong>优先级</strong>：浏览器是根据优先级来决定当多个规则有不同选择器对应相同的元素的时候需要使用哪个规则</li>
+<li><strong>继承</strong>：一些设置在父元素上的 CSS
+属性是可以被子元素继承的，有些则不能</li>
+</ul>
+<h3 id="理解继承">2.2.2 理解继承</h3>
+<h4 id="控制继承">控制继承</h4>
+<ul>
+<li>CSS 为控制继承提供了五个特殊的通用属性值。每个 CSS
+属性都接收这些值。
+<ul>
+<li><code>inherit</code>
+设置该属性会使子元素属性和父元素相同。实际上，就是“开启继承”。==【继承父类】==</li>
+<li><code>initial</code>
+将应用于选定元素的属性值设置为该属性的<strong>初始值</strong>==【继承浏览器】==</li>
+<li><code>revert</code>
+将应用于选定元素的属性值<strong>重置为浏览器的默认样式</strong>，而不是应用于该属性的默认值，类似
+<code>unset</code></li>
+<li><code>revert-layer</code>
+将应用于选定元素的属性值重置为在上一个层叠层中建立的值</li>
+<li><code>unset</code>
+将属性重置为自然值，也就是如果属性是自然继承那么就是 <code>inherit</code>，否则和 <code>initial</code> 一样</li>
+</ul></li>
+</ul>
+<h4 id="重设所有属性值">重设所有属性值</h4>
+<ul>
+<li><code>all</code> 属性可以同时将继承值应用于所有属性</li>
+</ul>
+<h3 id="理解层叠">2.2.3 理解层叠</h3>
+<ul>
+<li>层叠的三个因素（后面的更重要）
+<ol type="1">
+<li>资源顺序</li>
+<li>优先级</li>
+<li>重要程度</li>
+</ol></li>
+</ul>
+<h4 id="资源顺序">资源顺序</h4>
+<ul>
+<li>在相同优先级时，后面的规则覆盖前面的规则</li>
+</ul>
+<h4 id="优先级">优先级</h4>
+<ul>
+<li>范围更小的，优先级更高</li>
+<li>常见做法：给基本元素定义通用样式，给不同元素创建对应的类</li>
+<li><strong>【优先级计算】</strong>：权重和
+<ul>
+<li>ID：100【==ID== 选择器】</li>
+<li>类：10【==类==选择器、==属性==选择器或者==伪类==】</li>
+<li>元素：1【==元素==、==伪元素==选择器】</li>
+<li> 通用选择器
+<code>*</code>、组合符（<code>+</code>、<code>&gt;</code>、<code>~</code>、'
+'）和调整优先级的选择器（<code>:where()</code>）不会影响优先级</li>
+<li>否定（<code>:not()</code>）和任意匹配（<code>:is()</code>）伪类本身对优先级没有影响，但它们的参数则会带来影响。参数中，对优先级算法有贡献的参数的优先级的
+<strong>最大值</strong> 将作为该伪类选择器的优先级。</li>
+<li>评估优先级的最佳方法是对不同的优先级等级单独进行评分，并从最高的等级开始，必要时再计算低优先级等级的权重</li>
+</ul></li>
+</ul>
+<h4 id="内联样式">内联样式</h4>
+<ul>
+<li>内联样式，即 <code>style</code>
+属性内的样式声明，优先于所有普通的样式，无论其优先级如何</li>
+<li>相当于 1-0-0-0</li>
+</ul>
+<h4 id="important"><code>!important</code></h4>
+<ul>
+<li>不建议使用</li>
+<li>覆盖普通规则的层叠</li>
+<li> 覆盖 <code>!important</code> 唯一的办法就是另一个 <code>!important</code> 具有相同_优先级_而且顺序靠后，或者更高优先级</li>
+</ul>
+<h3 id="css-位置的影响">2.2.4 CSS 位置的影响</h3>
+<ul>
+<li>相互冲突的声明将按以下顺序应用，后一种声明将覆盖前一种声明：</li>
+</ul>
+<ol type="1">
+<li>用户代理样式表中的声明（例如，浏览器的默认样式，在没有设置其他样式时使用）。</li>
+<li>用户样式表中的常规声明（由用户设置的自定义样式）。</li>
+<li>作者样式表中的常规声明（这些是我们 web 开发人员设置的样式）。</li>
+<li>作者样式表中的 <code>!important</code> 声明</li>
+<li>用户样式表中的 <code>!important</code> 声明</li>
+<li>用户代理样式表中的 <code>!important</code> 声明</li>
+</ol>
+<h3 id="级联层的顺序">2.2.5 级联层的顺序</h3>
+<ul>
+<li>在级联层中声明 CSS
+是，优先级的顺序由声明层的顺序来决定。在任何层之外声明的 CSS
+样式会被按声明的顺序组合在一起，形成一个未命名的层，它会被当作最后声明的层</li>
+<li>对于存在冲突的常规（没有 <code>!important</code> 声明）样式，后面的层比先前定义的层的优先级高。但对于带有 <code>!important</code> 标记的样式，其顺序相反——先前的层中的
+important 样式比后面的层以及为在层中声明的 important 样式优先级要高</li>
+<li>但内联样式比所有作者定义的样式的优先级都要高，不受级联层规则的影响</li>
+</ul>
+<h2 id="盒模型">2.3 盒模型</h2>
+<h3 id="块级盒子和内联盒子">2.3.1 块级盒子和内联盒子</h3>
+<ul>
+<li><strong>块级盒子</strong> (<strong>block box</strong>)
+<ul>
+<li>盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着==盒子会和父容器一样宽==</li>
+<li>每个盒子都会==换行==</li>
+<li><code>width</code> 和 <code>height</code> 属性可以发挥作用</li>
+<li>内边距（padding）, 外边距（margin）和
+边框（border）会将其他元素从当前盒子周围“推开”</li>
+</ul></li>
+<li><strong>内联盒子</strong> (<strong>inline box</strong>)
+<ul>
+<li>盒子不会产生换行</li>
+<li><code>width</code> 和 <code>height</code> 属性将不起作用。</li>
+<li>==垂直方向==的内边距、外边距以及边框会被应用但是不会把其他处于 <code>inline</code> 状态的盒子推开。</li>
+<li>==水平方向==的内边距、外边距以及边框会被应用且会把其他处于 <code>inline</code> 状态的盒子推开。</li>
+</ul></li>
+<li>用做链接的 <code>&lt;a&gt;</code> 元素、 <code>&lt;span&gt;</code>、 <code>&lt;em&gt;</code> 以及 <code>&lt;strong&gt;</code> 都是默认处于 <code>inline</code> 状态的</li>
+<li>我们通过对盒子<code>display</code> 属性的设置，比如 <code>inline</code> 或者 <code>block</code> ，来控制盒子的
+<strong>外部显示类型</strong></li>
+</ul>
+<h3 id="内部和外部显示类型">2.3.2 内部和外部显示类型</h3>
+<ul>
+<li><strong>外部显示类型</strong>：盒子是 block 还是 inline</li>
+<li><strong>内部显示类型</strong>：盒子内部如何布局
+<ul>
+<li>默认：按照 <strong>正常文档流</strong> 布局</li>
+<li><code>flex</code>：弹性盒子规则布局</li>
+<li><code>grid</code>：网格布局</li>
+</ul></li>
+</ul>
+<h3 id="css-盒模型">2.3.3 CSS 盒模型</h3>
+<h4 id="盒模型的组成">盒模型的组成</h4>
+<ul>
+<li><strong>Content box</strong>:
+这个区域是用来显示内容，大小可以通过设置 <code>width</code> 和 <code>height</code>.</li>
+<li><strong>Padding box</strong>:
+包围在内容区域外部的空白区域；大小通过 <code>padding</code> 相关属性设置。</li>
+<li><strong>Border box</strong>:
+边框盒包裹内容和内边距。大小通过 <code>border</code> 相关属性设置。</li>
+<li><strong>Margin box</strong>:
+这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过 <code>margin</code> 相关属性设置。</li>
+</ul>
+<figure>
+<img src="盒模型的组成.png" srcset="/img/loading.gif" lazyload alt="盒模型的组成" />
+<figcaption aria-hidden="true">盒模型的组成</figcaption>
+</figure>
+<h4 id="标准盒模型-替代盒模型">标准盒模型 &amp; 替代盒模型</h4>
+<ul>
+<li><strong>标准盒模型</strong>：padding 和 border
+再加上设置的宽高一起决定整个盒子的大小</li>
+<li><strong>替代 (IE)
+盒模型</strong>：所有宽度都是可见宽度，所以内容宽度是该宽度减去边框和填充部分
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">html</span> &#123;<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li> margin 不计入实际大小 ——
+当然，它会影响盒子在页面所占空间，但是影响的是盒子外部空间</li>
+</ul>
+<h3 id="margin-padding-and-border">2.3.4 margin, padding and border</h3>
+<h4 id="margin-外边距">margin 外边距</h4>
+<ul>
+<li>盒子外部空间，将其他元素推开，设置负值会导致和其他内容重叠</li>
+<li><strong>margin 折叠</strong>
+如果两个外边距相接，这两个外边距将合并成最大的单个外边距的大小
+<ul>
+<li>外边距折叠需要遵循规则</li>
+</ul></li>
+</ul>
+<h4 id="border-边框">border 边框</h4>
+<ul>
+<li>如果您正在使用标准的盒模型，边框的大小将添加到框的宽度和高度。如果您使用的是替代盒模型，那么边框的大小会使内容框更小，因为它会占用一些可用的宽度和高度。</li>
+<li>边框的属性包括：宽度、样式和颜色</li>
+</ul>
+<h4 id="padding-内边距">padding 内边距</h4>
+<ul>
+<li>padding <u>不能为负数</u></li>
+<li>用于将内容推离边框</li>
+</ul>
+<h3 id="内联盒子的盒子模型">2.3.5 内联盒子的盒子模型</h3>
+<ul>
+<li>以 <code>&lt;span&gt;</code> 为例，它是 inline box，因此
+<ul>
+<li>宽度、高度设置无效</li>
+<li>外边距、内边距和边框生效，但不改变其他内容与内联盒子的关系</li>
+</ul></li>
+</ul>
+<h3 id="display-inline-block">2.3.6
+<code>display: inline-block;</code></h3>
+<ul>
+<li>作用：不导致其他元素换行，但设定宽度和高度，可以<strong>避免和其他内容重叠</strong></li>
+</ul>
+<h2 id="背景和边框">2.4 背景和边框</h2>
+<h3 id="背景">2.4.1 背景</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">105deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,.<span class="hljs-number">2</span>) <span class="hljs-number">39%</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">51</span>,<span class="hljs-number">56</span>,<span class="hljs-number">57</span>,<span class="hljs-number">1</span>) <span class="hljs-number">96%</span>) center center / <span class="hljs-number">400px</span> <span class="hljs-number">200px</span> no-repeat, <span class="hljs-built_in">url</span>(<span class="hljs-string">big-star.png</span>) center no-repeat, rebeccapurple;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="背景颜色-background-color">背景颜色
+<code>background-color</code></h4>
+<ul>
+<li>接受所有有效的 <code>&lt;color&gt;</code> 值</li>
+<li>扩展到边框内</li>
+</ul>
+<h4 id="背景图片-background-image">背景图片
+<code>background-image</code></h4>
+<ul>
+<li>图像太大：不缩小，显示一个角落</li>
+<li>图像太小：平铺以填充方框</li>
+<li>如果同时制定了背景颜色和图片：图像显示在颜色上层</li>
+</ul>
+<h5 id="控制背景图像平铺-background-repeat">控制背景图像平铺
+<code>background-repeat</code></h5>
+<ul>
+<li><code>no-repeat</code> — 不重复。</li>
+<li><code>repeat-x</code> —水平重复。</li>
+<li><code>repeat-y</code> —垂直重复。</li>
+<li><code>repeat</code> — 在两个方向重复。</li>
+</ul>
+<h5 id="调整背景图像的大小-background-size">调整背景图像的大小
+<code>background-size</code></h5>
+<ul>
+<li>设置长度或百分比</li>
+<li>设置 <code>cover</code>：在保持宽高比同时完全覆盖盒子</li>
+<li>设置 <code>contain</code>：将使图像的大小适合盒子内</li>
+</ul>
+<h5 id="背景图像定位-background-position">背景图像定位
+<code>background-position</code></h5>
+<ul>
+<li><code>background-position-x</code>、<code>background-position-y</code></li>
+<li>以框的左上角为原点</li>
+<li>可以使用关键字，如 <code>top</code>、<code>right</code></li>
+<li>使用长度值、百分比</li>
+<li>混合使用关键字、长度值以及百分比</li>
+<li><strong>4-value 语法</strong>
+<code>background-position: top 20px right 10px;</code></li>
+</ul>
+<h4 id="渐变背景">渐变背景</h4>
+<ul>
+<li><code>background-image</code> 属性，填入值为 CSS 渐变生成器
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.a</span> &#123;<br>  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">105deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">249</span>,<span class="hljs-number">255</span>,<span class="hljs-number">1</span>) <span class="hljs-number">39%</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">51</span>,<span class="hljs-number">56</span>,<span class="hljs-number">57</span>,<span class="hljs-number">1</span>) <span class="hljs-number">96%</span>);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="多个背景图像">多个背景图像</h4>
+<ul>
+<li>在单个属性值中指定多个 <code>background-image</code> 值，用逗号分隔每个值</li>
+<li>背景将与最后列出的背景图像层在堆栈的底部，背景图像在代码列表中最先出现的在顶端【先写的在上面的图层】</li>
+<li>指定多个背景图像时，其他 <code>background-</code>
+属性也要分别指定，用逗号分隔
+<ul>
+<li>如果写的值少于图像数量，将循环赋值</li>
+</ul></li>
+</ul>
+<h4 id="背景滚动-background-attachment">背景滚动
+<code>background-attachment</code></h4>
+<ul>
+<li><code>scroll</code>:
+使元素的背景在页面滚动时滚动。如果滚动了元素内容，则背景不会移动。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。</li>
+<li><code>fixed</code>:
+使元素的背景固定在视图端口上，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。</li>
+<li><code>local</code>: 这个值是后来添加的 (它只在 Internet Explorer
+9+中受支持，而其他的在
+IE4+中受支持)，因为滚动值相当混乱，在很多情况下并不能真正实现您想要的功能。局部值将背景固定在设置的元素上，因此当您滚动元素时，背景也随之滚动。</li>
+</ul>
+<h4 id="使用-background-简写属性">使用 <code>background</code>
+简写属性</h4>
+<ul>
+<li>如果使用多个背景，则需要为第一个背景指定所有普通属性，然后在逗号后面添加下一个背景</li>
+<li><code>background-color</code> 只能在逗号之后指定</li>
+<li><code>background-size</code> 值只能包含在背景位置之后，用'/'字符分隔，例如：<code>center/80%</code></li>
+</ul>
+<h3 id="边框">2.4.2 边框</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="圆角-border-radius">圆角 <code>border-radius</code></h4>
+<h2 id="处理不同方向的文本暂时跳过">2.5
+处理不同方向的文本【暂时跳过】</h2>
+<h3 id="书写模式-writing-mode">2.5.1 书写模式
+<code>writing-mode</code></h3>
+<ul>
+<li><code>horizontal-tb</code>:
+块流向从上至下。对应的文本方向是横向的。</li>
+<li><code>vertical-rl</code>:
+块流向从右向左。对应的文本方向是纵向的。</li>
+<li><code>vertical-lr</code>:
+块流向从左向右。对应的文本方向是纵向的。</li>
+</ul>
+<h3 id="书写模式对布局的影响">2.5.2 书写模式对布局的影响</h3>
+<h2 id="溢出">2.6 溢出</h2>
+<h3 id="css-对溢出的处理">2.6.1 CSS 对溢出的处理</h3>
+<ul>
+<li>只要有可能，CSS
+就不会隐藏你的内容，隐藏引起的数据损失通常会造成困扰</li>
+<li>如果你已经用<code>width</code>或者<code>height</code>限制住了一个盒子，CSS
+假定，你知道你在做什么，而且你已经控制住了溢出的隐患</li>
+</ul>
+<h3 id="手动处理溢出-overflow">2.6.2 手动处理溢出
+<code>overflow</code></h3>
+<ul>
+<li><code>visible</code> 【默认】</li>
+<li><code>hidden</code> 隐藏溢出</li>
+<li><code>scroll</code> 溢出时滚动（两个方向都有）
+<ul>
+<li>只在 y 轴滚动：<code>overflow-y: scroll</code></li>
+</ul></li>
+<li><code>auto</code> 只在溢出时出现滚动条</li>
+</ul>
+<h3 id="溢出建立了块级排版上下文">2.6.3 溢出建立了块级排版上下文</h3>
+<h2 id="css-值和单位">2.7 CSS 值和单位</h2>
+<h3 id="相对长度单位">相对长度单位</h3>
+<p><img src="Pasted%20image%2020230221094057.png" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>百分比：父元素的百分比</li>
+</ul>
+<p><img src="Pasted%20image%2020230221100612.png" srcset="/img/loading.gif" lazyload /></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>02 CSS 构建基础</div>
+      <div>http://example.com/2023/02/20/CSS/02 CSS 构建基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>wwww-oooo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/20/%E5%AD%98%E5%90%A6%E5%92%8C%E5%80%BC%E9%80%89%E6%8B%A9%E5%99%A8.png/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/18/JavaScript/FreeCodeCamp%20JS%20%E6%95%99%E7%A8%8B/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
