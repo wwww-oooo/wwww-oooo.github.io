@@ -24,7 +24,7 @@
 <meta property="og:description" content="基础 JavaScript 注释  使用 &#x2F;&#x2F; 注释掉当前行的代码 使用多行注释来注释你的代码，使用 &#x2F;* 开始， *&#x2F; 结束  声明变量 var  undefined（未定义）、null（空）、boolean（布尔型）、string（字符串）、symbol、number（数字）、bigint（可以表示任意大的整数）和 object（对象） 通过在变量前面使用关键字 var，声明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-18T07:10:33.428Z">
-<meta property="article:modified_time" content="2023-02-20T11:23:47.853Z">
+<meta property="article:modified_time" content="2023-02-28T02:08:25.321Z">
 <meta property="article:author" content="wwww-oooo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          4.4k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          24 分钟
+          37 分钟
         
       </span>
     
@@ -458,6 +458,91 @@ false 。</p>
 <p>switch 语句使用严格相等进行比较</p>
 <h2 id="typeof">typeof</h2>
 <p>可以使用 <code>typeof</code> 运算符确定变量或值的类型</p>
+<h2 id="js-对象">JS 对象</h2>
+<h3 id="创建-js-对象">创建 JS 对象</h3>
+<ul>
+<li><p>对象和 <code>arrays</code> 类似，区别在于数组使用索引来访问和修改数据，而对象中的数据是通过 <code>properties</code> 访问的</p></li>
+<li><p>对象非常适合用来存储结构化数据，可以表示真实世界中的物体，比如一只猫。
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> cat = &#123;<br>  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Whiskers&quot;</span>,<br>  <span class="hljs-string">&quot;legs&quot;</span>: <span class="hljs-number">4</span>,<br>  <span class="hljs-string">&quot;tails&quot;</span>: <span class="hljs-number">1</span>,<br>  <span class="hljs-string">&quot;enemies&quot;</span>: [<span class="hljs-string">&quot;Water&quot;</span>, <span class="hljs-string">&quot;Dogs&quot;</span>]<br>&#125;;<br></code></pre></td></tr></table></figure></p></li>
+<li><p>在此示例中，所有属性都存储为字符串，例如 <code>name</code>、<code>legs</code> 和 <code>tails</code>。
+然而，你也可以使用数字作为属性。 你甚至可以省略单字字符串属性中的引号
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> anotherObject = &#123;<br>  <span class="hljs-attr">make</span>: <span class="hljs-string">&quot;Ford&quot;</span>,<br>  <span class="hljs-number">5</span>: <span class="hljs-string">&quot;five&quot;</span>,<br>  <span class="hljs-string">&quot;model&quot;</span>: <span class="hljs-string">&quot;focus&quot;</span><br>&#125;;<br></code></pre></td></tr></table></figure></p></li>
+<li><p>然而，如果你的对象有非字符串属性的话，JavaScript
+会自动将它们转为字符串。</p></li>
+</ul>
+<h3 id="访问-js-对象">访问 JS 对象</h3>
+<ul>
+<li>点号表示法（<code>.</code>）</li>
+<li>方括号表示法（<code>[]</code>）
+<ul>
+<li>你想访问的属性名中包含空格，就==必须==使用方括号表示法来获取它的属性值</li>
+<li><code>myObj["Space Name"];</code></li>
+<li>注意，如果属性名中包含空格，就==必须==使用引号（单引号或双引号）将它们包裹起来。</li>
+</ul></li>
+<li>通过变量访问对象属性 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myDog = <span class="hljs-string">&quot;Hunter&quot;</span>;<br><span class="hljs-keyword">const</span> myBreed = dogs[myDog];<br></code></pre></td></tr></table></figure>
+<ul>
+<li>在使用变量名访问属性时，不要使用引号引起来，因为我们使用的是 <em>值</em>，而不是 <em>属性名</em></li>
+</ul></li>
+</ul>
+<h3 id="删除对象属性">删除对象属性</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">delete</span> ourDog.<span class="hljs-property">bark</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="使用对象进行查找">使用对象进行查找</h3>
+<ul>
+<li>对象和字典一样，可以用来存储键/值对。
+如果数据是扁平的，你可以用对象来查找你想要的值，而不是链式使用 <code>switch</code> 或 <code>if/else</code> 语句。
+当你知道你的输入数据在某个范围时，这种查找方式极为有效。</li>
+</ul>
+<h3 id="测试对象的属性">测试对象的属性</h3>
+<ul>
+<li>有时检查一个对象属性是否存在是非常有用的。
+我们可以用对象的 <code>.hasOwnProperty(propname)</code> 方法来检查对象是否有指定的属性。 
+<ul>
+<li><code>.hasOwnProperty()</code> 找到该属性时返回 <code>true</code>，</li>
+<li>找不到该属性时返回 <code>false</code>。</li>
+</ul></li>
+</ul>
+<h3 id="操作复杂对象">操作复杂对象</h3>
+<ul>
+<li> JavaScript 对象是一种灵活的数据结构。
+它可以储存字符串（strings）、数字（numbers）、布尔值（booleans）、数组（arrays）、函数（functions）和对象（objects）以及这些值的任意组合</li>
+<li>对象将数据以一种键 - 值对的形式保存。</li>
+<li><strong>提示：</strong>数组中有多个 JSON
+对象的时候，对象与对象之间要用逗号隔开】</li>
+</ul>
+<h2 id="使用-js-生成随机数">使用 JS 生成随机数</h2>
+<h3 id="生成随机-0-1-小数">生成随机 <code>[0, 1)</code> 小数</h3>
+<ul>
+<li>在 JavaScript
+中，可以用 <code>Math.random()</code> 生成一个在<code>0</code>（包括
+0）到 <code>1</code>（不包括 1）之间的随机小数。
+因此 <code>Math.random()</code> 可能返回 <code>0</code>，但绝不会返回 <code>1</code></li>
+</ul>
+<h3 id="生成随机整数">生成随机整数</h3>
+<ol type="1">
+<li>用 <code>Math.random()</code> 生成一个随机小数。</li>
+<li>把这个随机小数乘以 <code>x</code>。</li>
+<li>用 <code>Math.floor()</code> 向下取整，获得它最近的整数</li>
+<li>得到 <code>[0, x)</code> 整数</li>
+</ol>
+<h3 id="生成某个范围内的随机整数">生成某个范围内的随机整数</h3>
+<ol type="1">
+<li><p>定义一个最小值 <code>min</code> 和一个最大值 <code>max</code>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * (max - min + <span class="hljs-number">1</span>)) + min<br></code></pre></td></tr></table></figure></p></li>
+<li><p>得到包括 min 和 max 的随机整数</p></li>
+</ol>
+<h2 id="使用-parseint-函数">使用 parseInt 函数</h2>
+<ul>
+<li><code>parseInt()</code> 函数解析一个字符串返回一个整数
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;007&quot;</span>);<br></code></pre></td></tr></table></figure></li>
+<li><code>parseInt()</code> 函数解析一个字符串并返回一个整数。
+它还可以传入第二个参数，指定了字符串中数字的基数。 基数可以是 2 到 36
+之间的整数 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;11&quot;</span>, <span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+<ul>
+<li>变量 radix 表示 <code>11</code> 是在二进制系统中。
+这个示例将字符串 <code>11</code> 转换为整数 <code>3</code></li>
+</ul></li>
+<li></li>
+</ul>
 
                 
               </div>
