@@ -24,7 +24,7 @@
 <meta property="og:description" content="基础 JavaScript 注释  使用 &#x2F;&#x2F; 注释掉当前行的代码 使用多行注释来注释你的代码，使用 &#x2F;* 开始， *&#x2F; 结束  声明变量 var  undefined（未定义）、null（空）、boolean（布尔型）、string（字符串）、symbol、number（数字）、bigint（可以表示任意大的整数）和 object（对象） 通过在变量前面使用关键字 var，声明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-18T07:10:33.428Z">
-<meta property="article:modified_time" content="2023-02-28T02:08:25.321Z">
+<meta property="article:modified_time" content="2023-03-04T00:53:00.441Z">
 <meta property="article:author" content="wwww-oooo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.4k 字
+          8k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          37 分钟
+          68 分钟
         
       </span>
     
@@ -541,8 +541,228 @@ false 。</p>
 <li>变量 radix 表示 <code>11</code> 是在二进制系统中。
 这个示例将字符串 <code>11</code> 转换为整数 <code>3</code></li>
 </ul></li>
-<li></li>
 </ul>
+<h1 id="正则表达式">正则表达式</h1>
+<h2 id="测试正则表达式">测试正则表达式</h2>
+<ul>
+<li>使用 <code>.test()</code> 方法
+<ul>
+<li><code>.test()</code> 方法会把编写的正则表达式和字符串（即括号内的内容）匹配，如果成功匹配到字符，则返回 <code>true</code>，反之，返回 <code>false</code>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> testStr = <span class="hljs-string">&quot;freeCodeCamp&quot;</span>;<br><span class="hljs-keyword">let</span> testRegex = <span class="hljs-regexp">/Code/</span>;<br>testRegex.<span class="hljs-title function_">test</span>(testStr);<br></code></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<h2 id="匹配文字字符串">匹配文字字符串</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> testStr = <span class="hljs-string">&quot;Hello, my name is Kevin.&quot;</span>;<br><span class="hljs-keyword">let</span> testRegex = <span class="hljs-regexp">/Kevin/</span>;<br>testRegex.<span class="hljs-title function_">test</span>(testStr);<br></code></pre></td></tr></table></figure>
+<h2 id="同时用多种模式匹配文字字符串">同时用多种模式匹配文字字符串</h2>
+<ul>
+<li>使用 <code>alternation</code> 或 <code>OR</code> 操作符搜索多个模式： <code>|</code>
+<ul>
+<li>如果你想匹配 <code>yes</code> 或 <code>no</code>，你需要的正则表达式是 <code>/yes|no/</code></li>
+</ul></li>
+</ul>
+<h2 id="匹配时忽略大小写">匹配时忽略大小写</h2>
+<ul>
+<li>忽略大小写的标志——<code>i</code>
+<ul>
+<li>通过将它附加到正则表达式之后来使用它</li>
+<li><code>/ignorecase/i</code></li>
+</ul></li>
+</ul>
+<h2 id="提取匹配项">提取匹配项</h2>
+<ul>
+<li>使用 <code>.match()</code> 方法来提取找到的实际匹配项</li>
+<li>使用字符串来调用 <code>.match()</code> 方法，并在括号内传入正则表达式</li>
+<li><code>.match</code> 语法是目前为止一直使用的 <code>.test</code> 方法中的“反向”
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-string">&quot;Hello, World!&quot;</span>.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/Hello/</span>);<br><span class="hljs-keyword">let</span> ourStr = <span class="hljs-string">&quot;Regular expressions&quot;</span>;<br><span class="hljs-keyword">let</span> ourRegex = <span class="hljs-regexp">/expressions/</span>;<br>ourStr.<span class="hljs-title function_">match</span>(ourRegex);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="全局匹配">全局匹配</h2>
+<ul>
+<li>多次搜索或提取模型，你可以使用全局搜索标志： <code>g</code></li>
+<li>在正则表达式上可以有多个标志，比如 <code>/search/gi</code></li>
+</ul>
+<h2 id="用通配符匹配任何内容">用通配符匹配任何内容</h2>
+<ul>
+<li>通配符 <code>.</code> 将匹配任何一个字符。
+通配符也叫 <code>dot</code> 或 <code>period</code></li>
+</ul>
+<h2 id="将单个字符与多种可能性匹配">将单个字符与多种可能性匹配</h2>
+<ul>
+<li>文字匹配模式（<code>/literal/</code>）：精确匹配</li>
+<li>通配符（<code>/./</code>）：匹配所有</li>
+<li>可以使用字符集 （character classes）更灵活的匹配字符
+<ul>
+<li>把字符集放在方括号（<code>[</code> 和 <code>]</code>）之间来定义一组需要匹配的字符串</li>
+<li> <code>/b[aiu]g/</code> 来执行此操作。 <code>[aiu]</code> 是只匹配字符 <code>a</code>、<code>i</code> 或者 <code>u</code> 的字符集。</li>
+</ul></li>
+</ul>
+<h2 id="匹配字母表中的字母">匹配字母表中的字母</h2>
+<ul>
+<li>字符集中，可以使用连字符（<code>-</code>）来定义要匹配的字符范围
+<ul>
+<li>要匹配小写字母 <code>a</code> 到 <code>e</code>，你可以使用 <code>[a-e]</code></li>
+</ul></li>
+</ul>
+<h2 id="匹配字母表中的数字和字母">匹配字母表中的数字和字母</h2>
+<ul>
+<li>使用连字符（<code>-</code>）匹配字符范围并不仅限于字母。
+它还可以匹配一系列数字
+<ul>
+<li><code>/[0-5]/</code> 匹配 <code>0</code> 和 <code>5</code> 之间的任意数字，包含 <code>0</code> 和 <code>5</code></li>
+</ul></li>
+<li>可以在单个字符集中组合一系列字母和数字 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> jennyStr = <span class="hljs-string">&quot;Jenny8675309&quot;</span>;<br><span class="hljs-keyword">let</span> myRegex = <span class="hljs-regexp">/[a-z0-9]/ig</span>;<br>jennyStr.<span class="hljs-title function_">match</span>(myRegex);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="匹配单个未指定的字符">匹配单个未指定的字符 <code>^</code></h2>
+<ul>
+<li>创建一个不想匹配的字符集合。
+这些类型的字符集称为否定字符集（ negated character sets）</li>
+<li>创建否定字符集，需要在开始括号后面和不想匹配的字符前面放置脱字符（即<code>^</code>）
+<ul>
+<li><code>/[^aeiou]/gi</code> 匹配所有非元音字符</li>
+</ul></li>
+</ul>
+<h2 id="匹配出现一次或多次的字符">匹配出现一次或多次的字符
+<code>+</code></h2>
+<ul>
+<li>需要匹配出现一次或者连续多次的的字符（或字符组）。
+这意味着它至少出现一次，并且可能重复出现</li>
+<li>使用 <code>+</code> 符号来检查情况是否如此
+<ul>
+<li>字符或匹配模式必须一个接一个地==连续==出现</li>
+<li>例如，<code>/a+/g</code> 会在 <code>abc</code> 中匹配到一个匹配项，并且返回 <code>["a"]</code>。
+因为 <code>+</code> 的存在，它也会在 <code>aabc</code> 中匹配到一个匹配项，然后返回 <code>["aa"]</code></li>
+<li>如果它是检查字符串 <code>abab</code>，它将匹配到两个匹配项并且返回<code>["a", "a"]</code>，因为<code>a</code>字符不连续，在它们之间有一个<code>b</code>字符</li>
+</ul></li>
+</ul>
+<h2 id="匹配出现零次或多次的字符">匹配出现零次或多次的字符
+<code>*</code></h2>
+<ul>
+<li>执行该操作的字符叫做星号，即<code>*</code> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> soccerWord = <span class="hljs-string">&quot;gooooooooal!&quot;</span>;<br><span class="hljs-keyword">let</span> gPhrase = <span class="hljs-string">&quot;gut feeling&quot;</span>;<br><span class="hljs-keyword">let</span> oPhrase = <span class="hljs-string">&quot;over the moon&quot;</span>;<br><span class="hljs-keyword">let</span> goRegex = <span class="hljs-regexp">/go*/</span>;     <span class="hljs-comment">// o 可以出现 0 次或多次</span><br>soccerWord.<span class="hljs-title function_">match</span>(goRegex);<br>gPhrase.<span class="hljs-title function_">match</span>(goRegex);<br>oPhrase.<span class="hljs-title function_">match</span>(goRegex);<br></code></pre></td></tr></table></figure>
+<ul>
+<li>按顺序排列，三次 <code>match</code> 调用将返回值 <code>["goooooooo"]</code>，<code>["g"]</code> 和 <code>null</code></li>
+</ul></li>
+</ul>
+<h2 id="用惰性匹配来查找字符">用惰性匹配来查找字符 <code>?</code></h2>
+<ul>
+<li>贪婪（greedy）匹配会匹配到符合正则表达式匹配模式的字符串的最长可能部分，并将其作为匹配项返回</li>
+<li>懒惰（lazy）匹配，它会匹配到满足正则表达式的字符串的最小可能部分</li>
+<li>使用 <code>?</code> 字符来将其变成懒惰匹配。
+调整后的正则表达式 <code>/t[a-z]*?i/</code></li>
+</ul>
+<h2 id="匹配字符串的开头">匹配字符串的开头 <code>^</code></h2>
+<ul>
+<li>除了在字符集中使用之外，插入符号（<code>^</code>）用于匹配文本是否在字符串的开始位置</li>
+</ul>
+<h2 id="匹配字符串的末尾">匹配字符串的末尾 <code>$</code></h2>
+<ul>
+<li>使用正则表达式的美元符号 <code>$</code> 来搜寻字符串的结尾</li>
+</ul>
+<h2 id="匹配所有的字母和数字-w">匹配所有的字母和数字
+<code>\w</code></h2>
+<ul>
+<li>JavaScript 中与字母表匹配的最接近的元字符是<code>\w</code>。</li>
+<li>这个缩写等同于<code>[A-Za-z0-9_]</code>。</li>
+<li>此字符类匹配大写字母和小写字母以及数字。
+注意，这个字符类也包含下划线字符 (<code>_</code>)</li>
+</ul>
+<h2 id="匹配除了字母和数字的所有符号-w">匹配除了字母和数字的所有符号
+<code>\W</code></h2>
+<ul>
+<li>使用 <code>\W</code> 搜寻和 <code>\w</code> 相反的匹配模式</li>
+<li>此缩写与 <code>[^A-Za-z0-9_]</code> 是一样的</li>
+</ul>
+<h2 id="匹配所有数字-d">匹配所有数字 <code>\d</code></h2>
+<ul>
+<li>查找数字字符的缩写是 <code>\d</code>，注意是小写的 <code>d</code></li>
+<li>等同于元字符 <code>[0-9]</code>，它查找 0 到 9
+之间任意数字的单个字符</li>
+</ul>
+<h2 id="匹配所有非数字">匹配所有非数字</h2>
+<ul>
+<li>查找非数字字符的缩写是 <code>\D</code>。
+这等同于字符串 <code>[^0-9]</code></li>
+</ul>
+<h2 id="匹配空白字符-s">匹配空白字符 <code>\s</code></h2>
+<ul>
+<li>使用 <code>\s</code> 搜寻空格，其中 <code>s</code> 是小写。
+此匹配模式将匹配空格、回车符、制表符、换页符和换行符。
+可以认为这类似于元字符 <code>[ \r\t\f\n\v]</code></li>
+</ul>
+<h2 id="匹配非空白字符-s">匹配非空白字符 <code>\S</code></h2>
+<ul>
+<li>使用 <code>\S</code> 搜寻非空白字符，其中 <code>s</code> 是大写</li>
+<li>可以认为这类似于元字符 <code>[^ \r\t\f\n\v]</code></li>
+</ul>
+<h2 id="指定匹配的上限和下限-35">指定匹配的上限和下限
+<code>&#123;3,5&#125;</code></h2>
+<ul>
+<li>使用数量说明符（quantity specifiers）指定匹配模式的上下限</li>
+<li>数量说明符与花括号（<code>&#123;</code> 和 <code>&#125;</code>）一起使用。
+可以在花括号之间放两个数字，这两个数字代表匹配模式的上限和下限</li>
+<li>例如，要匹配出现 <code>3</code> 到 <code>5</code> 次字母 <code>a</code> 的在字符串 <code>ah</code>，正则表达式应为<code>/a&#123;3,5&#125;h/</code></li>
+</ul>
+<h2 id="只指定匹配的下限-3">只指定匹配的下限 <code>&#123;3,&#125;</code></h2>
+<ul>
+<li>只想指定匹配模式的下限而不需要指定上限</li>
+<li>在第一个数字后面跟一个逗号即可</li>
+</ul>
+<h2 id="指定匹配的确切数量-3">指定匹配的确切数量 <code>&#123;3&#125;</code></h2>
+<h2 id="检查全部或无">检查全部或无</h2>
+<ul>
+<li>使用问号 <code>?</code> 指定可能存在的元素。
+这将检查前面的零个或一个元素。</li>
+<li>可以将此符号视为前面的元素是可选的 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> british = <span class="hljs-string">&quot;colour&quot;</span>;<br><span class="hljs-keyword">let</span> rainbowRegex= <span class="hljs-regexp">/colou?r/</span>;<br>rainbowRegex.<span class="hljs-title function_">test</span>(american);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="正向先行断言和负向先行断言">正向先行断言和负向先行断言</h2>
+<ul>
+<li>先行断言 （Lookaheads）是告诉 JavaScript
+在字符串中向前查找的匹配模式</li>
+<li>当想要在同一个字符串上搜寻多个匹配模式时，这可能非常有用</li>
+<li>正向先行断言（positive lookahead）
+<ul>
+<li>正向先行断言会查看并确保搜索匹配模式中的元素存在，但实际上并不匹配</li>
+<li>正向先行断言的用法是 <code>(?=...)</code>，其中 <code>...</code> 就是需要存在但不会被匹配的部分</li>
+</ul></li>
+<li>负向先行断言（negative lookahead）
+<ul>
+<li>负向先行断言会查看并确保搜索匹配模式中的元素不存在</li>
+<li>负向先行断言的用法是 <code>(?!...)</code>，其中 <code>...</code> 是希望不存在的匹配模式</li>
+<li>如果负向先行断言部分不存在，将返回匹配模式的其余部分</li>
+</ul></li>
+<li>先行断言的更实际用途是检查一个字符串中的两个或更多匹配模式
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> password = <span class="hljs-string">&quot;abc123&quot;</span>;<br><span class="hljs-keyword">let</span> checkPass = <span class="hljs-regexp">/(?=\w&#123;3,6&#125;)(?=\D*\d)/</span>;<br>checkPass.<span class="hljs-title function_">test</span>(password);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="检查混合字符组">检查混合字符组</h2>
+<ul>
+<li>使用正则表达式里的括号 <code>()</code> 来检查字符组</li>
+</ul>
+<h2 id="使用捕获组重用模式">使用捕获组重用模式</h2>
+<ul>
+<li>捕获组 可以用于找到重复的子字符串</li>
+<li>捕获组是通过把要捕获的正则表达式放在括号中来构建的</li>
+<li>分组匹配的子字符串被保存到一个临时的“变量”，
+可以使用同一正则表达式和反斜线及捕获组的编号来访问它（例如：<code>\1</code>）。
+捕获组按其开头括号的位置自动编号（从左到右），从 1 开始
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> repeatRegex = <span class="hljs-regexp">/(\w+) \1 \1/</span>;<br>repeatRegex.<span class="hljs-title function_">test</span>(repeatStr); <span class="hljs-comment">// Returns true</span><br>repeatStr.<span class="hljs-title function_">match</span>(repeatRegex); <span class="hljs-comment">// Returns [&quot;row row row&quot;, &quot;row&quot;]</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="使用捕获组搜索和替换">使用捕获组搜索和替换</h2>
+<ul>
+<li>可以在字符串上使用 <code>.replace()</code> 方法来搜索并替换字符串中的文本。 
+<ul>
+<li><code>.replace()</code> 的输入首先是想要搜索的正则表达式匹配模式。</li>
+<li>第二个参数是用于替换匹配的字符串或用于执行某些操作的函数。</li>
+</ul></li>
+<li>还可以使用美元符号（<code>$</code>）访问替换字符串中的捕获组
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-string">&quot;Code Camp&quot;</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/(\w+)\s(\w+)/</span>, <span class="hljs-string">&#x27;$2 $1&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<ul>
+<li>调用 <code>replace</code> 将返回字符串 <code>Camp Code</code></li>
+</ul></li>
+</ul>
+<h2 id="删除开头和结尾的空白">删除开头和结尾的空白</h2>
+<ul>
+<li>正则表达式</li>
+<li><code>String.prototype.trim()</code></li>
+</ul>
+<h1 id="es6">ES6</h1>
 
                 
               </div>

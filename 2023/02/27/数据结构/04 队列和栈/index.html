@@ -24,7 +24,7 @@
 <meta property="og:description" content="了解 FIFO 和 LIFO 处理顺序的原理； 实现这两个数据结构； 熟悉内置的队列和栈结构； 解决基本的队列相关问题，尤其是 BFS； 解决基本的栈相关问题； 理解在使用 DFS 和其他 递归 算法来解决问题时，系统栈是如何发挥作用的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-27T02:15:37.144Z">
-<meta property="article:modified_time" content="2023-03-01T01:25:09.421Z">
+<meta property="article:modified_time" content="2023-03-04T02:22:09.042Z">
 <meta property="article:author" content="wwww-oooo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          3.6k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          19 分钟
+          30 分钟
         
       </span>
     
@@ -360,7 +360,7 @@
 <li>在每个更外一层的 <code>while</code> 循环之后，我们<code>距离根结点更远一步</code>。变量 <code>step</code> 指示从根结点到我们正在访问的当前结点的距离</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 返回根节点到目标节点的最短路径长度</span><br><span class="hljs-comment"> */</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">BFS</span><span class="hljs-params">(Node root, Node target)</span> &#123;<br>    Queue&lt;Node&gt; queue;  <span class="hljs-comment">// 存储所有需要处理的结点</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">step</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;       <span class="hljs-comment">// 记录从根节点到当前结点的步数</span><br>    <span class="hljs-comment">// 初始化</span><br>    将根节点加到队列中;<br>    <span class="hljs-comment">// BFS</span><br>    <span class="hljs-keyword">while</span> (队列不为空) &#123;<br>        step = step + <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 处理当前已经在队列中的结点</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">size</span> <span class="hljs-operator">=</span> queue.size();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; size; ++i) &#123;<br>			<span class="hljs-type">Node</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> the first node in queue;<span class="hljs-comment">// 找到队列的头作为当前节点</span><br>			<span class="hljs-keyword">return</span> step <span class="hljs-keyword">if</span> cur is target;      <span class="hljs-comment">// 判断该节点是否为目标结点</span><br>            <span class="hljs-keyword">for</span> (Node next : the neighbors of cur) &#123;<span class="hljs-comment">// 找到当前结点的所有邻居</span><br>                add next to queue; <span class="hljs-comment">// 将邻居加入队列</span><br>            &#125;<br>            remove the first node from queue; <span class="hljs-comment">// 将当前结点从队列中弹出</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;          <span class="hljs-comment">// 没有通向目标节点的路径</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="模板-2">模板 2</h4>
+<h4 id="模板-2---添加哈希集">模板 2 - 添加哈希集</h4>
 <ul>
 <li><strong>【区别】</strong>
 添加一个哈希集，确保我们永远<code>不会访问一个结点两次</code>，避免陷入无限循环</li>
@@ -385,6 +385,47 @@
 的元素</li>
 <li><code>peek</code>：获得顶部元素</li>
 </ul>
+<h2 id="栈和深度优先搜索-dfs">2.2 栈和深度优先搜索 DFS</h2>
+<ul>
+<li>除非我们到达最深的结点，否则我们永远不会回溯</li>
+<li>通常，我们使用 <strong>递归实现
+DFS</strong>。栈在递归中起着重要的作用</li>
+</ul>
+<h3 id="用栈进行-dfs">2.2.1 用栈进行 DFS</h3>
+<ol type="1">
+<li><strong>结点的处理顺序是什么？</strong>
+<ul>
+<li>在我们到达<code>最深的</code>结点之后，我们<code>只</code>会回溯并尝试另一条路径</li>
+<li>因此，你在 DFS 中找到的第一条路径并不总是最短的路径</li>
+</ul></li>
+<li><strong>栈的入栈和退栈顺序是什么？</strong>
+<ol type="1">
+<li>将根结点推入到栈中</li>
+<li>尝试第一个邻居 <code>B</code> 并将结点 <code>B</code> 推入到栈中</li>
+<li>当我们到达最深的结点 <code>E</code> 时，我们需要回溯</li>
+<li>当我们回溯时，我们将从栈中<code>弹出最深的结点</code>，这实际上是推入到栈中的<code>最后一个结点</code></li>
+</ol></li>
+</ol>
+<h3 id="dfs-实现模板">2.2.2 DFS 实现模板</h3>
+<h4 id="模板-1---递归">模板 1 - 递归</h4>
+<ul>
+<li>当我们递归地实现 DFS
+时，似乎不需要使用任何栈。但实际上，我们使用的是由系统提供的隐式栈，也称为调用栈</li>
+<li>每个元素都需要固定的空间。栈的大小正好是 DFS 的深度。
+<ul>
+<li>因此，在最坏的情况下，维护系统栈需要 O(h)，其中 h 是 DFS
+的最大深度。</li>
+<li>在计算空间复杂度时，永远不要忘记考虑系统栈。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 找到从当前节点到目标的路径时返回 true</span><br><span class="hljs-comment"> */</span><br><span class="hljs-type">boolean</span> <span class="hljs-title function_">DFS</span><span class="hljs-params">(Node cur, Node target, Set&lt;Node&gt; visited)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> cur is target;    <span class="hljs-comment">// 若当前节点为目标节点，返回 true</span><br>    <span class="hljs-keyword">for</span> (next : each neighbor of cur) &#123;  <span class="hljs-comment">// 对当前节点的每一个邻居</span><br>        <span class="hljs-keyword">if</span> (next is not in visited) &#123;    <span class="hljs-comment">// 如果该邻居没有被访问过</span><br>            add next to visited;          <span class="hljs-comment">// 将该邻居加入 visited 标记</span><br>            <span class="hljs-comment">// 递归，如果该DFS(该邻居)返回真，则返回真</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> <span class="hljs-title function_">DFS</span><span class="hljs-params">(next, target, visited)</span> == <span class="hljs-literal">true</span>;  <br>        &#125;<br>    &#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <span class="hljs-comment">// 无法找到路径时返回假</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<h4 id="模板-2---显式栈实现-dfs">模板 2 - 显式栈实现 DFS</h4>
+<ul>
+<li>递归解决方案的优点是它更容易实现</li>
+<li>存在一个很大的缺点：如果递归的深度太高，你将遭受堆栈溢出</li>
+<li><strong>使用显式栈实现 DFS</strong>：逻辑与递归解决方案完全相同。
+但我们使用 <code>while</code> 循环和<code>栈</code>来模拟递归期间的<code>系统调用栈</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 找到从当前节点到目标的路径时返回 true</span><br><span class="hljs-comment"> */</span><br><span class="hljs-type">boolean</span> <span class="hljs-title function_">DFS</span><span class="hljs-params">(<span class="hljs-type">int</span> root, <span class="hljs-type">int</span> target)</span> &#123;<br>    Set&lt;Node&gt; visited;<br>    Stack&lt;Node&gt; s;<br>	add root to s;    <span class="hljs-comment">// 根节点入栈</span><br>    <span class="hljs-keyword">while</span> (s is not empty) &#123;    <span class="hljs-comment">// 若栈不为空</span><br>        <span class="hljs-type">Node</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> the top element in s;    <span class="hljs-comment">// 取出栈顶元素</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> cur is target;       <span class="hljs-comment">// 若栈顶元素为目标则返回 true</span><br>        <span class="hljs-keyword">for</span> (Node next : the neighbors of cur) &#123;    <span class="hljs-comment">// 对当前结点的每个邻居</span><br>            <span class="hljs-keyword">if</span> (next is not in visited) &#123;    <span class="hljs-comment">// 若该邻居未被访问</span><br>                add next to s;    <span class="hljs-comment">// 将该邻居入栈</span><br>                add next to visited;    <span class="hljs-comment">// 将该邻居加入 visited 标记</span><br>            &#125;<br>        &#125;<br>        remove cur from s;    <span class="hljs-comment">// 当前节点出栈</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
